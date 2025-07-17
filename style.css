@@ -1,0 +1,312 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #333;
+}
+
+/* Updated Header */
+header {
+    background: #fff;
+    color: #222;
+    padding: 20px;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align logo and nav to left */
+}
+
+.header-left img {
+    height: 60px;
+    width: 300px; /* Adjusted width for better visibility */
+    margin-bottom: 10px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row; /* Nav links stacked vertically */
+}
+
+nav a {
+    color: #222;
+    text-decoration: none;
+    margin: 5px 10px;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    background:#f4c542;
+    color: #222;
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr; /* Sidebar and main content */
+    gap: 20px;
+    max-width: 1300px;
+    margin:     auto;
+    padding: 20px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: 1fr 1fr  ;
+    gap: 20px;
+}
+
+.sidebar {
+    padding: 20px;
+    border-left: 1px solid #ccc;
+   background: #f8f9f9
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    color: #000;
+    border-bottom: 2px solid #f4c542;
+    padding-bottom: 5px;
+}
+
+.sidebar label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.product-card {
+    background: #fff8dc;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    width: 400px;
+
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.product-info h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+.product-info p {
+    margin: 4px 0;
+    font-size: 0.95em;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    background: #fff4c2;
+}
+
+.cks-footer {
+    background: #111;
+    color: #bbb;
+    padding: 40px 20px 20px 20px;
+    font-size: 0.9em;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.footer-left {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-left img {
+    width: 150px;  /* Adjust logo size */
+    margin-bottom: 15px;
+}
+
+.footer-left p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.footer-right {
+    flex: 2;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 40px; /* Space between columns */
+}
+
+.footer-links {
+    min-width: 150px;
+}
+
+.footer-links h4 {
+    color: #f3c308;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    display: block;
+    color: #bbb;
+    text-decoration: none;
+    margin: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #444;
+    padding-top: 15px;
+    font-size: 0.8em;
+    color: #777;
+}
+
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.chatbot-button {
+    background: #f3c308;
+    color: #222;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.chatbot-window {
+    display: none;
+    width: 300px;
+    height: 400px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+}
+
+.chatbot-header {
+    background: #f3c308;
+    color: #222;
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.chatbot-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    font-size: 0.9em;
+}
+
+.bot-message, .user-message {
+    margin: 8px 0;
+    padding: 8px 12px;
+    border-radius: 12px;
+    max-width: 80%;
+}
+
+.bot-message {
+    background: #eee;
+    align-self: flex-start;
+}
+
+.user-message {
+    background: #cde8ff;
+    align-self: flex-end;
+}
+
+.chatbot-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.chatbot-input input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: 5px;
+}
+
+.chatbot-input button {
+    background: #f3c308;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar{
+        order: unset;
+    }
+    .products {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    }
+
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        margin: 5px 10px;
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-right {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+    }
+}
