@@ -1,0 +1,461 @@
+    <!DOCTYPE html>
+    <html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Polymer Drag Chain</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    .hero{
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .hero img{
+        width: 100%;
+        height: 650px;
+        object-fit: cover;
+        display: block;
+        z-index: 0;
+    }
+</style>
+
+<header class="site-header">
+       <div class="site-header-left img">
+         <img src="images/CKS-logo.png" alt="CKS Logo">
+        </div>
+    
+  <!-- Hamburger Icon (visible on mobile) -->
+  <div class="hamburger" id="hamburger"></div>
+
+    <!-- Navigation Links -->
+    <nav class="site-nav" id="siteNav">
+        <div><a href="#">Home</a></div>
+        <div class="dropdown">
+        <a href="#">Products</a>
+        <div class="dropdown-content">
+        <a href="polymer-drag-chain.html">Drag Chains</a>
+        <a href="Cable Reeling Drums.html">Cable Reeling Drums</a>
+        <a href="Conduit Pipes.html">Conduit Pipes</a>
+        <a href="Cables.html">Cables</a>
+        </div>
+        </div>
+        <div><a href="#">About</a></div>
+        <div><a href="#">Contact</a></div>
+    </nav>
+</header>
+
+<section class="hero">
+    <img src="Images/polymer-page.jpg" alt="Polymer Drag Chain Page">
+</section>
+
+    <body>
+        <div class="page-wrapper">
+
+        <section class="product-section">
+
+        <!-- Sidebar Filters -->
+        <div class="filter-sidebar">
+            <h3>Filter Drag Chains</h3>
+
+            <div class="filter-group">
+          <label for="ohRange">Outer Height: <span id="ohValue">100mm</span></label>
+          <input type="range" id="ohRange" min="0" max="100" value="50" />
+        </div>
+
+        <div class="filter-group">
+          <label for="ihRange">Inner Height: <span id="ihValue">100mm</span></label>
+          <input type="range" id="ihRange" min="0" max="100" value="50" />
+        </div>
+
+        <div class="filter-group">
+          <label for="owRange">Outer Width: <span id="owValue">250mm</span></label>
+          <input type="range" id="owRange" min="0" max="250" value="125" />
+        </div>
+
+        <div class="filter-group">
+          <label for="iwRange">Inner Width: <span id="iwValue">200mm</span></label>
+          <input type="range" id="iwRange" min="0" max="200" value="100" />
+        </div>
+
+        <div class="filter-group">
+          <label for="radiusRange">Radius: <span id="radiusValue">400mm</span></label>
+          <input type="range" id="radiusRange" min="0" max="400" value="200" />
+        </div>
+      </div>
+
+      <!-- Products -->
+      <div class="products">
+        <!-- CK07 F -->
+        <div
+          class="product-card"
+          data-oh-min="7"
+          data-oh-max="7"
+          data-ih-min="7"
+          data-ih-max="7"
+          data-ow-min="12"
+          data-ow-max="21"
+          data-iw-min="7"
+          data-iw-max="16"
+          data-radius-min="18"
+          data-radius-max="18"
+        >
+          <img src="images/ck07f-series.png" alt="CK07 F series" />
+          <div class="product-info">
+            <h4>CK07 F</h4>
+            <p>Inner Height: 7mm</p>
+            <p>Outer Height: 7mm</p>
+            <p>Inner Width: 7mm - 16mm</p>
+            <p>Outer Width: 12mm - 21mm</p>
+            <p>Radius: 18mm</p>
+          </div>
+        </div>
+
+        <!-- CK10 F -->
+        <div
+          class="product-card"
+          data-oh-min="14"
+          data-oh-max="14"
+          data-ih-min="10"
+          data-ih-max="10"
+          data-ow-min="16"
+          data-ow-max="36"
+          data-iw-min="10"
+          data-iw-max="30"
+          data-radius-min="18"
+          data-radius-max="18"
+        >
+          <img src="images/ck10f-series.png" alt="CK10 F series" />
+          <div class="product-info">
+            <h4>CK10 F</h4>
+            <p>Inner Height: 10mm</p>
+            <p>Outer Height: 14mm</p>
+            <p>Inner Width: 10mm-30mm</p>
+            <p>Outer Width: 16mm-36mm</p>
+            <p>Radius: 18mm</p>
+          </div>
+        </div>
+
+        <!-- CK15 A/F -->
+        <div class="product-card"
+          data-oh-min="20"
+          data-oh-max="20"
+          data-ih-min="15"
+          data-ih-max="15"
+          data-ow-min="23"
+          data-ow-max="48"
+          data-iw-min="15"
+          data-iw-max="40"
+          data-radius-min="25"
+          data-radius-max="35"
+        >
+          <img src="images/ck15.png" alt="CK15 A/F series" />
+          <div class="product-info">
+            <h4>CK15 A/F</h4>
+            <p>Inner Height: 15mm</p>
+            <p>Outer Height: 20mm</p>
+            <p>Inner Width: 15mm-40mm</p>
+            <p>Outer Width: 23mm-48mm</p>
+            <p>Radius: 25mm-35mm</p>
+          </div>
+        </div>
+
+        <div class="product-card"
+        data-oh-min="26" data-oh-max="26"
+        data-ih-min="20" data-ih-max="20" 
+        data-ow-min="27" data-ow-max="27"
+        data-iw-min="25" data-iw-max="25"   
+        data-radius-min="40" data-radius-max="40"
+        >
+        <img src="images/ck20.png" alt="CK20 F/Y-series">
+            <div class="product-info">
+                <h4>CK20 F/Y</h4>
+                <p>Inner Height: 20mm </p>
+                <p>Outer Height: 26mm</p>
+                <p>Inner Width: 25mm</p>
+                <p>Outer Width: 27mm</p>
+                <p>Radius: 40</p>
+            </div>
+        </div>
+
+        <div class="product-card"
+    data-oh-min="26" data-oh-max="26"
+    data-ih-min="24" data-ih-max="24"
+    data-ow-min="39" data-ow-max="144"
+    data-iw-min="25" data-iw-max="100"
+    data-radius-min="75" data-radius-max="125">
+
+            <img src="images/ck24.png" alt="CK24 A-series">
+            <div class="product-info">
+                <h4>CK24 A</h4>
+                <p>Inner Height: 24mm</p>
+                <p>Outer Height: 26mm</p>
+                <p>Inner Width: 25mm-100mm</p>
+                <p>Outer Width: 39mm-144mm</p>
+                <p>Radius: 75-125 </p>
+            </div>
+            </div>
+
+        <div class="product-card"
+    data-oh-min="42" data-oh-max="42"
+    data-ih-min="25" data-ih-max="25"
+    data-ow-min="62" data-ow-max="122"
+    data-iw-min="40" data-iw-max="100"
+    data-radius-min="40" data-radius-max="125">
+
+            <img src="images/ck25.png" alt="CK25 A-series">
+            <div class="product-info">
+                <h4>CK25 A</h4>
+                <p>Inner Height: 25mm</p>
+                <p>Outer Height: 42mm</p>
+                <p>Inner Width: 40mm-100mm</p>
+                <p>Outer Width:62mm-122mm</p>
+                <p>Radius: 40-125 </p>
+            </div>
+        </div>
+
+        <div class="product-card"
+    data-oh-min="48" data-oh-max="48"
+    data-ih-min="28" data-ih-max="28"
+    data-ow-min="60" data-ow-max="120"
+    data-iw-min="40" data-iw-max="100"
+    data-radius-min="40" data-radius-max="200">
+
+            <img src="images/ck28.png" alt="CK28 A-series">
+            <div class="product-info">
+                <h4>CK28 A</h4>
+                <p>Inner Height: 28mm</p>
+                <p>Outer Height: 48mm</p>
+                <p>Inner Width: 40mm-100mm</p>
+                <p>Outer Width: 60mm-120mm</p>
+                <p>Radius: 40-200 </p>
+            </div>
+        </div>
+
+       <div class="product-card"
+    data-oh-min="52" data-oh-max="52"
+    data-ih-min="35" data-ih-max="35"
+    data-ow-min="64" data-ow-max="199"
+    data-iw-min="40" data-iw-max="175"
+    data-radius-min="50" data-radius-max="150">
+
+            <img src="images/ck35.png" alt="CK35 A/K/Y-series">
+            <div class="product-info">
+                <h4>CK35 A/K/Y</h4>
+                <p>Inner Height: 35mm</p>
+                <p>Outer Height: 52mm</p>
+                <p>Inner Width: 40mm-175mm</p>
+                <p>Outer Width: 64mm-199mm</p>
+                <p>Radius: 50-150 </p>
+            </div>
+            </div>
+
+       
+            <div class="product-card"
+    data-oh-min="62" data-oh-max="62"
+    data-ih-min="40" data-ih-max="40"
+    data-ow-min="108" data-ow-max="228"
+    data-iw-min="80" data-iw-max="200"
+    data-radius-min="75" data-radius-max="300">
+
+            <img src="images/ck40.png" alt="CK42 A/AL-series ">
+            <div class="product-info">
+                <h4>CK40 A/AL</h4>
+                <p>Inner Height: 40mm</p>
+                <p>Outer Height: 62mm</p>
+                <p>Inner Width: 80mm-200mm </p>
+                <p>Outer Width: 108mm-228mm</p>
+                <p>Radius: 75-300</p>
+                </div>
+                </div>
+
+                <div class="product-card"
+    data-oh-min="58" data-oh-max="58"
+    data-ih-min="42" data-ih-max="42"
+    data-ow-min="67" data-ow-max="202"
+    data-iw-min="40" data-iw-max="175"
+    data-radius-min="75" data-radius-max="250">
+
+            <img src="images/ck42.png" alt="CK42 A/K/Y-series">
+            <div class="product-info">
+                <h4>CK42 A/K/Y</h4>
+                <p>Inner Height: 42mm</p>
+                <p>Outer Height: 58mm</p>
+                <p>Inner Width: 40mm-175mm</p>
+                <p>Outer Width: 67mm-202mm</p>
+                <p>Radius: 75-250 </p>
+            </div>
+        </div>
+
+       <div class="product-card"
+    data-oh-min="72" data-oh-max="72"
+    data-ih-min="50" data-ih-max="50"
+    data-ow-min="116" data-ow-max="236"
+    data-iw-min="80" data-iw-max="200"
+    data-radius-min="100" data-radius-max="400">
+
+            <img src="images/ck50.png" alt="CK50 A/AL/K/Y-series">
+            <div class="product-info">
+                <h4>CK50 A/AL/K/Y</h4>
+                <p>Inner Height: 50mm</p>
+                <p>Outer Height: 72mm</p>
+                <p>Inner Width: 80mm-200mm </p>
+                <p>Outer Width: 116mm-236mm</p>
+                <p>Radius: 100-400 </p>
+            </div>
+        </div>
+
+       <div class="product-card"
+    data-oh-min="82" data-oh-max="82"
+    data-ih-min="60" data-ih-max="60"
+    data-ow-min="112" data-ow-max="232"
+    data-iw-min="80" data-iw-max="200"
+    data-radius-min="100" data-radius-max="300">
+
+            <img src="images/ck60.png" alt="CK60 A/AL/K/Y-series">
+            <div class="product-info">
+                <h4>CK60 A/AL/K/Y</h4>
+                <p>Inner Height: 60mm</p>
+                <p>Outer Height: 82mm</p>
+                <p>Inner Width: 80mm-200mm  </p>
+                <p>Outer Width: 112mm-232mm</p>
+                <p>Radius: 100-300 </p>
+            </div>
+        </div>
+
+        <div class="product-card"
+    data-oh-min="102" data-oh-max="102"
+    data-ih-min="80" data-ih-max="80"
+    data-ow-min="120" data-ow-max="240"
+    data-iw-min="80" data-iw-max="200"
+    data-radius-min="150" data-radius-max="300">
+
+            <img src="images/ck80.png" alt="CK80 A/AL-series">
+            <div class="product-info">
+                <h4>CK80 A/AL</h4>
+                <p>Inner Height: 80mm</p>
+                <p>Outer Height: 102mm</p>
+                <p>Inner Width:  80mm-200mm </p>
+                <p>Outer Width: 120mm-240mm</p>
+                <p>Radius: 150-300 </p>
+            </div>
+         </div>
+       </div>
+</section>
+
+<footer class="cks-footer">
+    <div class="footer-container">
+
+        <!-- Left Side: Logo + Contact -->
+        <div class="footer-left">
+            <img src="images/CKS-logo.png" alt="CKS Logo">
+            <p><strong>CKS Cable Solutions</strong></p>
+            <p>Unit : G-35 Udyog Kunj,UPSIDC industrial-Area Ghaziabad - 201002</p>
+            <p>Phone: +91 99539 40165, +91 74282 07250</p>
+            <p>Email: electrical@cksindia.co.in , sales@cksindia.co.in , cranes@cksindia.co.in</p>
+        </div>
+
+        <!-- Right Side: Quick Links -->
+        <div class="footer-right">
+            <div class="footer-links">
+                <h4>Drag Chains</h4>
+                <a href="#">Plastic Light Series</a>
+                <a href="#">Plastic Medium Series</a>
+                <a href="#">Plastic Heavy Series</a>
+                <a href="#">Heavy Aluminium Frame</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Cable Reeling Drums</h4>
+                <a href="#">Motorised Reels</a>
+                <a href="#">Spring Reels</a>
+                <a href="#">Counterweight Reels</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Other Products</h4>
+                <a href="#">Industrial Cables</a>
+                <a href="#">Conduit Pipes</a>
+                <a href="#">Slip Ring Assemblies</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 CKS Cable Solutions | All Rights Reserved.
+    </div>
+</footer>
+</div>
+
+<script src="js/activity.js"></script>
+
+
+
+<script>
+const ohRange = document.getElementById('ohRange');
+const ihRange = document.getElementById('ihRange');
+const owRange = document.getElementById('owRange');
+const iwRange = document.getElementById('iwRange');
+const radiusRange = document.getElementById('radiusRange');
+
+const ohValue = document.getElementById('ohValue');
+const ihValue = document.getElementById('ihValue');
+const owValue = document.getElementById('owValue');
+const iwValue = document.getElementById('iwValue');
+const radiusValue = document.getElementById('radiusValue');
+
+const productCards = document.querySelectorAll('.product-card');
+
+function filterProducts() {
+    const oh = parseInt(ohRange.value);
+    const ih = parseInt(ihRange.value);
+    const ow = parseInt(owRange.value);
+    const iw = parseInt(iwRange.value);
+    const radius = parseInt(radiusRange.value);
+
+    ohValue.innerText = oh + 'mm';
+    ihValue.innerText = ih + 'mm';
+    owValue.innerText = ow + 'mm';
+    iwValue.innerText = iw + 'mm';
+    radiusValue.innerText = radius + 'mm';
+
+    productCards.forEach(card => {
+        const cardOhMin = parseInt(card.getAttribute('data-oh-min'));
+        const cardOhMax = parseInt(card.getAttribute('data-oh-max'));
+        const cardIhMin = parseInt(card.getAttribute('data-ih-min'));
+        const cardIhMax = parseInt(card.getAttribute('data-ih-max'));
+        const cardOwMin = parseInt(card.getAttribute('data-ow-min'));
+        const cardOwMax = parseInt(card.getAttribute('data-ow-max'));
+        const cardIwMin = parseInt(card.getAttribute('data-iw-min'));
+        const cardIwMax = parseInt(card.getAttribute('data-iw-max'));
+        const cardRadiusMin = parseInt(card.getAttribute('data-radius-min'));
+        const cardRadiusMax = parseInt(card.getAttribute('data-radius-max'));
+
+        if (
+            cardOhMax <= oh &&
+            cardIhMax <= ih &&
+            cardOwMax <= ow &&
+            cardIwMax <= iw &&
+            cardRadiusMax <= radius
+        ) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+filterProducts();
+
+[ohRange, ihRange, owRange, iwRange, radiusRange].forEach(slider => {
+    slider.addEventListener('input', filterProducts);
+});
+</script>
+</body>
+</html>

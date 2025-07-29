@@ -4,194 +4,297 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CKS Cable Solutions - Polymer Drag Chains</title>
-    
-    <!-- Link your reusable CSS -->
+
     <link rel="stylesheet" href="css/style.css">
-
-    <!--Link for using reusable Footer-->
-    <link rel="stylesheet" href="css/footer.css">
-
 </head>
 <body>
+<div class="page-wrapper">
+  <style>
+.content-wrapper {
+  min-height: calc(100vh - 80px); /* Adjust 80px based on your footer height */
+}
 
-<header>
-    <div class="header-left">
+    .stats-section {
+  margin-top: 40px; 
+  margin-bottom: 40px;   
+  display: flex;
+  text-align: center;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-    <img src="images/CKS-logo.png" alt="CKS Logo">
-    </div>
-    <nav>
+.stat-box {
+  flex: 1;
+  padding: 60px 20px;
+}
+
+.stat-box h2 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.stat-box p {
+  font-size: 20px;
+  margin: 0;
+}
+
+/* Yellow tones */
+.yellow {
+  background-color: #f3c308; /* primary yellow */
+}
+
+.yellow-medium {
+  background-color: #f5cf3b; /* medium yellow */
+}
+
+.yellow-light {
+  background-color: #f7db6e; /* light yellow */
+}
+
+.product-section {
+  padding: 25px 20px;
+  display: flex;
+  justify-content: center;
+  background: #f5f5f5;
+}
+
+.product-box {
+  display: flex;
+  gap: 30px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 30px;
+  max-width: 1100px;
+  width: 100%;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.product-box:hover {
+  transform: translateY(-5px);
+}
+
+.product-box img {
+  width: 400px;
+  height: 300px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.text-content {
+  flex: 1;
+}
+
+.text-content h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.text-content p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Alternating layout */
+.image-right {
+  flex-direction: row-reverse;
+}
+  </style>
+
+<header class="site-header">
+       <div class="site-header-left img">
+         <img src="images/CKS-logo.png" alt="CKS Logo">
+        </div>
+    
+  <!-- Hamburger Icon (visible on mobile) -->
+  <div class="hamburger" id="hamburger"></div>
+
+    <!-- Navigation Links -->
+    <nav class="site-nav" id="siteNav">
         <div><a href="#">Home</a></div>
-        <div><a href="#">Products</a></div>
+        <div class="dropdown">
+        <a href="#">Products</a>
+        <div class="dropdown-content">
+        <a href="polymer-drag-chain.html">Drag Chains</a>
+        <a href="Cable Reeling Drums.html">Cable Reeling Drums</a>
+        <a href="Conduit Pipes.html">Conduit Pipes</a>
+        <a href="Cables.html">Cables</a>
+        </div>
+        </div>
         <div><a href="#">About</a></div>
         <div><a href="#">Contact</a></div>
     </nav>
 </header>
 
-<div class="hero">
-    <bold><i>CKS Drag Chains </i></bold>
+<section class="hero">
+  <div class="slider">
+    <div class="slide active">
+      <div class="slide-gradient-overlay"></div> 
+      <img src="slider/polymer drag chain-slider.jpg"  alt="Slide 1">
+      <div class="text">
+        <h1>Polymer Drag Chains</h1>
+        <p>High-performance solutions for cable management in industrial applications.</p>
+        </div>
+        </div>
+        <div class="slide">
+          <div class="slide-gradient-overlay"></div> 
+      <img src="slider/cable-slider.jpg"  alt="Slide 2">
+      <div class="text">
+        <h1>Cable </h1>
+        <p>Durable and flexible cables designed for demanding environments.</p>
+        </div>
+        </div>
+        <div class="slide">
+          <div class="slide-gradient-overlay"></div> 
+      <img src="slider/conduit-slider.png" alt="Slide 3">
+      <div class="text">
+        <h1>Conduit Pipes</h1>
+        <p>Robust conduit systems for protecting and routing electrical cables.</p>
+        </div>
+        </div>
+        <div class="slide">
+          <div class="slide-gradient-overlay"></div> 
+      <img src="slider/motorized-reels.jpg"  alt="Slide 4">
+      <div class="text">
+        <h1>Cable Reeling Drums</h1>
+        <p>Efficient cable management with our advanced reeling solutions.</p>
+        </div>
+      </div>
+      </div>
+ 
+  <!-- Navigation Arrows -->
+    <button class="prev" onclick="changeSlide(-1)"></button>
+    <button class="next" onclick="changeSlide(1)"></button>
+
+    <!-- Dots -->
+    <div class="dots-container">
+      <span class="dot active" onclick="setSlide(0)"></span>
+      <span class="dot" onclick="setSlide(1)"></span>
+      <span class="dot" onclick="setSlide(2)"></span>
+      <span class="dot" onclick="setSlide(3)"></span>
+
+    </div>
+</section>
+
+<section class="stats-section">
+  <div class="stat-box yellow">
+    <h2>2</h2>
+    <p>Manufacturing Units</p>
+  </div>
+  <div class="stat-box yellow-medium">
+    <h2>7+</h2>
+    <p>Branches</p>
+  </div>
+  <div class="stat-box yellow-light">
+    <h2>100+</h2>
+    <p>Our Clients</p>
+  </div>
+</section>
+
+<section class="product-section">
+  <div class="product-box image-left">
+    <img src="images/about-us-photo.jpg" alt="Product 1">
+    <div class="text-content">
+      <h2>Drag  Chain </h2>
+      <p>A drag chain is a flexible carrier that guides and protects cables or hoses in motion,
+         preventing wear and tangling. We manufacture both polymer and steel drag chains—
+         polymer drag chains are lightweight, corrosion-resistant, and ideal for high-speed, 
+         low-load applications, while steel drag chains offer high strength and durability for
+         heavy-duty or harsh industrial environments.</p>
+    </div>
+  </div>
+</section>
+
+<section class="product-section">
+  <div class="product-box image-right">
+    <img src="images/motrorized-reels.jpg" alt="Product 2">
+    <div class="text-content">
+      <h2>Cable Reeling Drums</h2>
+      <p>Cable reeling drums manage and store cables during movement.
+         Available in spring-loaded and motorised types, they ensure safe,
+         efficient cable handling in dynamic applications across industrial 
+         and mobile equipment setups.</p>
+    </div>
+  </div>
+</section>
+
+<section class="product-section">
+  <div class="product-box image-left">
+    <img src="images/product-cables.jpg" alt="Product 3">
+    <div class="text-content">
+      <h2>Cables</h2>
+      <p>Industrial cables transmit power, signals, or data in factories,
+        machinery, and automation systems. They are designed for durability,
+        flexibility, and resistance to heat, oil, chemicals, and mechanical stress.</p>
+    </div>
+  </div>
+</section>
+
+<section class="product-section">
+  <div class="product-box image-right">
+    <img src="images/conduit.jpg" alt="Product 2">
+    <div class="text-content">
+      <h2>Conduit pipes</h2>
+      <p>A conduit pipe is a protective tubing used to route and shield electrical wires
+         in industrial, commercial, or residential settings, offering safety, durability,
+          and resistance to moisture, heat, and impact.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="cks-footer">
+    <div class="footer-container">
+
+        <!-- Left Side: Logo + Contact -->
+        <div class="footer-left">
+            <img src="images/CKS-logo.png" alt="CKS Logo">
+            <p>Unit : G-35 Udyog Kunj,UPSIDC industrial-Area Ghaziabad - 201002</p>
+            <p>Phone: +91 99539 40165, +91 74282 07250</p>
+            <p>Email: electrical@cksindia.co.in , sales@cksindia.co.in , cranes@cksindia.co.in</p>
+        </div>
+
+        <!-- Right Side: Quick Links -->
+        <div class="footer-right">
+            <div class="footer-links">
+                <h4>Drag Chains</h4>
+                <a href="#">Plastic Light Series</a>
+                <a href="#">Plastic Medium Series</a>
+                <a href="#">Plastic Heavy Series</a>
+                <a href="#">Heavy Aluminium Frame</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Cable Reeling Drums</h4>
+                <a href="#">Motorised Reels</a>
+                <a href="#">Spring Reels</a>
+                <a href="#">Counterweight Reels</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Other Products</h4>
+                <a href="#">Industrial Cables</a>
+                <a href="#">Conduit Pipes</a>
+                <a href="#">Slip Ring Assemblies</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 CKS Cable Solutions | All Rights Reserved.
+    </div>
+</footer>
 </div>
 
-<div class="container">
-    <aside class="sidebar" >
-        <h3>Filter by</h3>
-        <label><input type="checkbox" class="filter" data-filter="brand-cks"> Outer Width </label>
-        <label><input type="checkbox" class="filter" data-filter="series-ck40k"> Outer Height</label>
-        <label><input type="checkbox" class="filter" data-filter="series-ck60k"> Inner Width</label>
-        <label><input type="checkbox" class="filter" data-filter="frame-openable"> Inner Height</label>
-        <label><input type="checkbox" class="filter" data-filter="frame-fixed"> Bending Radius</label>
-        <label><input type="checkbox" class="filter" data-filter="series-ck80k"> Opening</label>
-        <label><input type="checkbox" class="filter" data-filter="series-ck40y"> Cover</label>
-    </aside>
 
-    <section class="products">
-
-        <div class="product-card brand-cks series-ck40k frame-fixed">
-            <img src="images/ck07f-series.png" alt="CK07 F series">
-            <div class="product-info">
-                <h4>CK07 F</h4>
-                <p>Inner Height: 7mm</p>
-                <p>Width: 7mm , 16mm</p>
-                <p>Radius: 18</p>
-            </div>
-        </div>
-
-        <div class="product-card brand-cks series-ck60k frame-openable">
-            <img src="images/ck10f-series.png" alt="CK10 F series">
-            <div class="product-info">
-                <h4>CK10  F</h4>
-                <p>Inner Height: 10mm</p>
-                <p>Width: 10mm , 20mm , 30mm</p>
-                <p>Radius: 18</p>
-            </div>
-        </div>
-
-        <div class="product-card brand-cks series-ck60k frame-fixed">
-            <img src="images/ck15.png" alt="ck15A/F-series">
-            <div class="product-info">
-                <h4>CK15 A/F</h4>
-                <p>Inner Height: 15mm</p>
-                <p>Width: 15mm , 20mm , 30mm , 40mm</p>
-                <p>Radius: 25-35</p>
-            </div>
-        </div>
-
-        <div class="product-card brand-cks series-ck40k frame-openable">
-            <img src="images/ck20.png" alt="CK20 F/Y-series">
-            <div class="product-info">
-                <h4>CK20 F/Y</h4>
-                <p>Inner Height: 20mm </p>
-                <p>Width: 25mm</p>
-                <p>Radius: 40</p>
-            </div>
-        </div>
-
-        <div class="product-card brand-cks series-ck80k frame-fixed">
-            <img src="images/ck24.png" alt="CK24 A-series">
-            <div class="product-info">
-                <h4>CK24 A</h4>
-                <p>Inner Height: 24mm</p>
-                <p>Width: 25mm , 40mm , 50mm , 60mm , 80mm , 100mm</p>
-                <p>Radius: 75,100,125 </p>
-            </div>
-            </div>
-
-        <div class="product-card brand-cks series-ck40y frame-openable">
-            <img src="images/ck25.png" alt="CK25 A-series">
-            <div class="product-info">
-                <h4>CK25 A</h4>
-                <p>Inner Height: 25mm</p>
-                <p>Width: 40mm , 50mm , 60mm , 80mm , 100mm</p>
-                <p>Radius: 40,75,100,125 </p>
-            </div>
-        </div>
-
-        <div class="product-card brand-cks series-ck40k frame-fixed">
-            <img src="images/ck28.png" alt="CK28 A-series">
-            <div class="product-info">
-                <h4>CK28 A</h4>
-                <p>Inner Height: 28mm</p>
-                <p>Width: 40mm , 50mm , 60mm , 80mm , 100mm</p>
-                <p>Radius: 40,75,100,125,200 </p>
-            </div>
-        </div>
-
-        <div class="product-card brand-cks series-ck40k frame-openable">
-            <img src="images/ck35.png" alt="CK35 A/K/Y-series">
-            <div class="product-info">
-                <h4>CK35 A/K/Y</h4>
-                <p>Inner Height: 35mm</p>
-                <p>Width: 40mm , 50mm , 60mm , 80mm , 100mm , 120mm , 125mm , 175mm</p>
-                <p>Radius: 50,75,100,150 </p>
-            </div>
-            </div>
-
-        <div class="product-card brand-cks series-ck40k frame-fixed">
-            <img src="images/ck42.png" alt="CK42 A/AL-series ">
-            <div class="product-info">
-                <h4>CK40 A/AL</h4>
-                <p>Inner Height: 40mm</p>
-                <p>Width: 80mm , 100mm , 120mm , 140mm , 160mm , 180mm , 200mm </p>
-                <p>Radius: 75,100,125,150,200,250,300</p>
-                </div>
-                </div>
-
-                <div class="product-card brand-cks series-ck40k frame-openable">
-            <img src="images/ck40.png" alt="CK40 A/K/Y-series">
-            <div class="product-info">
-                <h4>CK40 A/K/Y</h4>
-                <p>Inner Height: 42mm</p>
-                <p>Width: 40mm , 50mm , 60mm , 80mm , 100mm , 120mm , 125mm , 175mm</p>
-                <p>Radius: 75,100,150,200 </p>
-            </div>
-        </div>
-
-        <div class="product-card brand-cks series-ck40k frame-fixed">
-            <img src="images/ck50.png" alt="CK50 A/AL/K/Y-series">
-            <div class="product-info">
-                <h4>CK50 A/AL/K/Y</h4>
-                <p>Inner Height: 50mm</p>
-                <p>Width: 80mm , 100mm , 120mm , 140mm , 160mm , 180mm , 200mm </p>
-                <p>Radius: 100,200,300,400 </p>
-            </div>
-        </div>
-
-        <div class="product-card brand-cks series-ck40k frame-openable">
-            <img src="images/ck60.png" alt="CK60 A/AL/K/Y-series">
-            <div class="product-info">
-                <h4>CK60 A/AL/K/Y</h4>
-                <p>Inner Height: 60mm</p>
-                <p>Width: 80mm , 100mm , 120mm , 140mm , 160mm , 180mm , 200mm  </p>
-                <p>Radius: 100,150,200,250,300 </p>
-            </div>
-        </div>
-
-        <div class="product-card brand-cks series-ck40k frame-fixed">
-            <img src="images/ck80.png" alt="CK80 A/AL-series">
-            <div class="product-info">
-                <h4>CK80 A/AL</h4>
-                <p>Inner Height: 80mm</p>
-                <p>Width:  80mm , 100mm , 120mm , 140mm , 160mm , 180mm , 200mm </p>
-                <p>Radius: 150,200,250,300 </p>
-            </div>
-        </div>
-
-    </section>
-</div>
-
-
-<!-- Linking  JS --> 
-<script src="js/activity.js"></script>
-
-<div id="footer-placeholder"></div>
+<script src="js/slider.js"></script> 
 
 <script>
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        });
+  document.getElementById("hamburger").addEventListener("click", function () {
+    document.getElementById("siteNav").classList.toggle("show");
+  });
 </script>
-
-
 </body>
 </html>
