@@ -1,75 +1,61 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const filters = document.querySelectorAll('.filter');
-    const products = document.querySelectorAll('.product-card');
+// Get DOM elements
+const ohRange = document.getElementById('ohRange');
+const ihRange = document.getElementById('ihRange');
+const owRange = document.getElementById('owRange');
+const iwRange = document.getElementById('iwRange');
+const radiusRange = document.getElementById('radiusRange');
 
-    // Filtering Logic
-    filters.forEach(filter => {
-        filter.addEventListener('change', function() {
-            const activeFilters = Array.from(filters)
-                .filter(f => f.checked)
-                .map(f => f.getAttribute('data-filter'));
+const ohValue = document.getElementById('ohValue');
+const ihValue = document.getElementById('ihValue');
+const owValue = document.getElementById('owValue');
+const iwValue = document.getElementById('iwValue');
+const radiusValue = document.getElementById('radiusValue');
 
-            products.forEach(product => {
-                const matches = activeFilters.every(filterClass =>
-                    product.classList.contains(filterClass)
-                );
+const productCards = document.querySelectorAll('.product-card');
 
-                if (activeFilters.length === 0 || matches) {
-                    product.style.display = 'flex';
-                    product.style.flexDirection = 'column';
-                } else {
-                    product.style.display = 'none';
-                }
-            });
-        });
-    });
+function updateLabels() {
+  ohValue.textContent = ohRange.value + 'mm';
+  ihValue.textContent = ihRange.value + 'mm';
+  owValue.textContent = owRange.value + 'mm';
+  iwValue.textContent = iwRange.value + 'mm';
+  radiusValue.textContent = radiusRange.value + 'mm';
+}
 
-    // Quick View Modal (Optional Enhancement)
-    const modal = document.createElement('div');
-    modal.style.display = 'none';
-    modal.style.position = 'fixed';
-    modal.style.left = '0';
-    modal.style.top = '0';
-    modal.style.width = '100%';
-    modal.style.height = '100%';
-    modal.style.background = 'rgba(0,0,0,0.5)';
-    modal.style.justifyContent = 'center';
-    modal.style.alignItems = 'center';
-    modal.style.zIndex = '9999';
+function filterProducts() {
+  const oh = parseInt(ohRange.value);
+  const ih = parseInt(ihRange.value);
+  const ow = parseInt(owRange.value);
+  const iw = parseInt(iwRange.value);
+  const radius = parseInt(radiusRange.value);
 
-    const modalContent = document.createElement('div');
-    modalContent.style.background = '#fff';
-    modalContent.style.padding = '20px';
-    modalContent.style.maxWidth = '300px';
-    modalContent.style.boxShadow = '0 5px 15px rgba(0,0,0,0.3)';
-    modalContent.innerHTML = '<span style="cursor:pointer;float:right;font-size:18px;" id="closeModal">&times;</span><div id="modalText"></div>';
+  updateLabels();
 
-    modal.appendChild(modalContent);
-    document.body.appendChild(modal);
+  productCards.forEach((card) => {
+    const cardOhMax = parseInt(card.getAttribute('data-oh-max'));
+    const cardIhMax = parseInt(card.getAttribute('data-ih-max'));
+    const cardOwMax = parseInt(card.getAttribute('data-ow-max'));
+    const cardIwMax = parseInt(card.getAttribute('data-iw-max'));
+    const cardRadiusMax = parseInt(card.getAttribute('data-radius-max'));
 
-    products.forEach(product => {
-        product.addEventListener('click', () => {
-            const name = product.querySelector('h4').textContent;
-            const details = product.querySelectorAll('p');
-            let detailText = '';
-            details.forEach(p => {
-                detailText += p.textContent + '<br>';
-            });
+    // Show product only if all max specs are <= slider values
+    if (
+      cardOhMax <= oh &&
+      cardIhMax <= ih &&
+      cardOwMax <= ow &&
+      cardIwMax <= iw &&
+      cardRadiusMax <= radius
+    ) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
 
-            document.getElementById('modalText').innerHTML = `<strong>${name}</strong><br>${detailText}`;
-            modal.style.display = 'flex';
-        });
-    });
+// Initial filter on page load
+filterProducts();
 
-    document.getElementById('closeModal').onclick = () => {
-        modal.style.display = 'none';
-    };
-
-    window.onclick = (e) => {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-        }
-    };
-
-});
-
+// Add event listeners to sliders
+[ohRange, ihRange, owRange, iwRange, radiusRange].forEach((slider) =>
+  slider.addEventListener('input', filterProducts)
+);
